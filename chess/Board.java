@@ -15,10 +15,41 @@ public class Board {
     
 	//This method requires your input	
 	public static void initialisePieces(){
+		Board.setPiece(0,0,new Rook(PieceColour.BLACK));
+		Board.setPiece(0,1,new Knight(PieceColour.BLACK));		
+		Board.setPiece(0,2,new Bishop(PieceColour.BLACK));		
+		Board.setPiece(0,3,new Queen(PieceColour.BLACK));		
+		Board.setPiece(0,4,new King(PieceColour.BLACK));		
+		Board.setPiece(0,5,new Bishop(PieceColour.BLACK));		
+		Board.setPiece(0,6,new Knight(PieceColour.BLACK));		
+		Board.setPiece(0,7,new Rook(PieceColour.BLACK));
+		Board.setPiece(1,0,new Pawn(PieceColour.BLACK));		
+		Board.setPiece(1,1,new Pawn(PieceColour.BLACK));
+		Board.setPiece(1,2,new Pawn(PieceColour.BLACK));
+		Board.setPiece(1,3,new Pawn(PieceColour.BLACK));
+		Board.setPiece(1,4,new Pawn(PieceColour.BLACK));
+		Board.setPiece(1,5,new Pawn(PieceColour.BLACK));
+		Board.setPiece(1,6,new Pawn(PieceColour.BLACK));
+		Board.setPiece(1,7,new Pawn(PieceColour.BLACK));
 		
+		Board.setPiece(6,0,new Pawn(PieceColour.WHITE));		
+		Board.setPiece(6,1,new Pawn(PieceColour.WHITE));
+		Board.setPiece(6,2,new Pawn(PieceColour.WHITE));
+		Board.setPiece(6,3,new Pawn(PieceColour.WHITE));
+		Board.setPiece(6,4,new Pawn(PieceColour.WHITE));
+		Board.setPiece(6,5,new Pawn(PieceColour.WHITE));
+		Board.setPiece(6,6,new Pawn(PieceColour.WHITE));
+		Board.setPiece(6,7,new Pawn(PieceColour.WHITE));		
+		Board.setPiece(7,0,new Rook(PieceColour.WHITE));		
+		Board.setPiece(7,1,new Knight(PieceColour.WHITE));		
+		Board.setPiece(7,2,new Bishop(PieceColour.WHITE));		
+		Board.setPiece(7,3,new Queen(PieceColour.WHITE));		
+		Board.setPiece(7,4,new King(PieceColour.WHITE));		
+		Board.setPiece(7,5,new Bishop(PieceColour.WHITE));		
+		Board.setPiece(7,6,new Knight(PieceColour.WHITE));		
+		Board.setPiece(7,7,new Rook(PieceColour.WHITE));
 	}
-	
-	//This method requires your input	
+		
 	public static void printBoard(){
 		System.out.print("\n  a b c d e f g h \n");
 		System.out.print("  -----------------\n");		
@@ -41,21 +72,35 @@ public class Board {
 	}
 	
 	//This method requires your input	
-	public static boolean movePiece(int i0, int j0, int i1, int j1, Piece p){
+	public static boolean movePiece(int i0, int j0, int i1, int j1, Piece p)
+	{
+		if(Board.hasPiece(i0,j0))
+			{
+				if(Board.hasPiece(i1,j1)==false)
+					Board.setPiece(i1,j1,p);
+					Board.printBoard();
+			}
 		return false;
+
 	}
 
 	//This method requires your input
-	public static void setPiece(int iIn, int jIn, Piece p){
+	public static void setPiece(int iIn, int jIn, Piece p)
+	{
+		board[iIn][jIn].setPiece(p);
 	}
 	
 	//This method requires your input
-	public static Piece getPiece(int iIn, int jIn){
-		return new Piece();
+	public static Piece getPiece(int iIn, int jIn)
+	{
+		return board[iIn][jIn].getPiece();
 	}
 	
 	//This method requires your input
-	public static boolean hasPiece(int i, int j){		
+	public static boolean hasPiece(int i, int j)
+	{		
+		if(i<=1||i>=6)
+			return true;
 		return false;
 	}
 
