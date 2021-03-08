@@ -2,7 +2,8 @@ package chess;
 
 
 //This class is partially implemented
-public class Board {
+public class Board 
+{
 	private static Square [][] board = new Square[8][8];
 
 	//This method should not be edited
@@ -74,12 +75,19 @@ public class Board {
 	//This method requires your input	
 	public static boolean movePiece(int i0, int j0, int i1, int j1, Piece p)
 	{
-		if(Board.hasPiece(i0,j0))
+		if(board[i1][j1].getPiece()!=null)
+		{
+			if(board[i1][j1].getPiece().getSymbol()=="♔"||board[i1][j1].getPiece().getSymbol()=="♚")
 			{
-				if(Board.hasPiece(i1,j1)==false)
-					Board.setPiece(i1,j1,p);
-					Board.printBoard();
+				board[i1][j1].setPiece(p);
+				board[i0][j0].removePiece();
+				return true;
 			}
+
+		}
+
+		board[i1][j1].setPiece(p);
+		board[i0][j0].removePiece();
 		return false;
 
 	}
@@ -99,9 +107,7 @@ public class Board {
 	//This method requires your input
 	public static boolean hasPiece(int i, int j)
 	{		
-		if(i<=1||i>=6)
-			return true;
-		return false;
+		return board[i][j].hasPiece();
 	}
 
 }

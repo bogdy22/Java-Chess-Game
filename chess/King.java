@@ -4,8 +4,16 @@ public class King extends Piece{
 
 	public King(PieceColour p)
 	{
-		setSymbol("♔");
-		//"♚"	
+		if(p.name().equals("WHITE"))
+			{
+				this.setSymbol("♔");
+				this.colour=PieceColour.WHITE;
+			}
+		else
+			{
+				this.setSymbol("♚");
+				this.colour=PieceColour.BLACK;
+			}	
 	}
 
 	public boolean isLegitMove(int i0, int j0, int i1, int j1)

@@ -1,61 +1,83 @@
 package chess;
 
-public class Pawn extends Piece{
+public class Pawn extends Piece
+{
 	
 	public Pawn(PieceColour p)
 	{
-		//if(p.)
-		this.setSymbol("♙");
-		//else
-			//this.setSymbol("♟︎");
+		if(p.name().equals("WHITE"))
+		{
+			this.setSymbol("♙");
+			this.colour=PieceColour.WHITE;
+		}
+			
+		else
+		{
+			this.setSymbol("♟︎");
+			this.colour=PieceColour.BLACK;
+		}
+		
 	}	
 
 	public boolean isLegitMove(int i0, int j0, int i1, int j1)
 	{
 		if(j0==j1) // move normal
 		{
-			if(i1==i0-1) // move up
+			if(Board.getPiece(i0,j0).getColour().name().equals("WHITE"))
 			{
-				if(Board.hasPiece(i1,j1))
-					return false;
-				else 
-					return true;
+				if(i1==i0-1) // move up
+				{
+					if(Board.hasPiece(i1,j1))
+						return false;
+					else 
+						return true;
+				}
 			}
 
-			else if(i1==i0+1) // move down
+			else
 			{
-				if(Board.hasPiece(i1,j1))
-					return false;
-				else 
-					return true;	
+				if(i1==i0+1) // move down
+				{
+					if(Board.hasPiece(i1,j1))
+						return false;
+					else 
+						return true;	
+				}
 			}
 		}
 
-		if((j1==j0+1||j1==j0-1)&&i1==i0-1) // attack piece up
+		if(Board.getPiece(i0,j0).getColour().name().equals("WHITE"))
 		{
-			if(Board.hasPiece(i1,j1))
+			if((j1==j0+1||j1==j0-1)&&i1==i0-1) // attack piece up
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j0).getColour())
+				if(Board.hasPiece(i1,j1))
+				{
+					if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j0).getColour())
+						return false;
+					else
+						return true;
+				}
+				else 
 					return false;
-				else
-					return true;
-			}
-			else 
-				return false;
+			} 
+		}
+
+		else
+		{
+			if((j1==j0+1||j1==j0-1)&&i1==i0+1) // attack piece down
+			{
+				if(Board.hasPiece(i1,j1))
+				{
+					if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j0).getColour())
+						return false;
+					else
+						return true;
+				}
+				else 
+					return false;
 		} 
 
-		if((j1==j0+1||j1==j0-1)&&i1==i0+1) // attack piece down
-		{
-			if(Board.hasPiece(i1,j1))
-			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j0).getColour())
-					return false;
-				else
-					return true;
-			}
-			else 
-				return false;
-		} 
+		}
 
 		return false;
 	}

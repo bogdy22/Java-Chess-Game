@@ -1,15 +1,18 @@
 package chess;
 
 //This class requires your input
-public abstract class Piece {
+public abstract class Piece 
+{
 	private String symbol;
 	protected PieceColour colour;
 
-	public String getSymbol() {
+	public String getSymbol() 
+	{
 		return symbol;
 	}	
 
-	public void setSymbol(String s){
+	public void setSymbol(String s)
+	{
 		symbol = s;
 	}
 
@@ -18,9 +21,5 @@ public abstract class Piece {
 		return colour;
 	}
 
-	public boolean isLegitMove(int i0, int j0, int i1, int j1)
-	{
-
-		return false;
-	}
+	public abstract boolean isLegitMove(int i0, int j0, int i1, int j1);
 }
