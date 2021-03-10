@@ -103,7 +103,6 @@ public class Queen extends Piece{
 				for(int k=1; k<=(j1-j0)-1; k++)
 					if(Board.hasPiece(i0-k,j0+k))
 						return false;
-				System.out.println("pass");
 
 				if(Board.hasPiece(i1,j1))
 					{
@@ -136,20 +135,27 @@ public class Queen extends Piece{
 
 		if(i1+j1<i0+j0||i1+j1>i0+j0)
 		{
-			if((i1>i0&&j1>j0)&&(j0<8&&i0<8))  // move down right
+			if(i1>i0&&j1>j0)  // move down right
 			{
 				for(int k=1; k<=(j1-j0)-1; k++)
 					if(Board.hasPiece(i0+k,j0+k))
 						return false;
 
-				if(Board.hasPiece(i1,j1))
+				int column_advance=j1-j0;
+				if(column_advance>0)
+				{
+					if(i0+j0==i1+j1-2*column_advance)
 					{
-						if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
-							return false;
-						else
-							return true;
+						if(Board.hasPiece(i1,j1))
+							{
+								if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
+									return false;
+								else
+									return true;
+							}
+						else return true;
 					}
-				else return true;
+				}
 			}
 
 			if(i1<i0&&j1<j0)  // move up left
@@ -158,18 +164,24 @@ public class Queen extends Piece{
 					if(Board.hasPiece(i0-k,j0-k))
 						return false;
 
-				if(Board.hasPiece(i1,j1))
-					{
-						if(Board.getPiece(i0,j0).getColour().name()!=Board.getPiece(i1,j1).getColour().name())
-							return true;
-						else
-							return false;
-					}
-				else return true;
+				int column_advance=j0-j1;
+				if(column_advance>0)
+				{
+					if(i0+j0==i1+j1+2*column_advance)
+						{
+							if(Board.hasPiece(i1,j1))
+							{
+								if(Board.getPiece(i0,j0).getColour().name()!=Board.getPiece(i1,j1).getColour().name())
+									return true;
+								else
+									return false;
+							}
+							else return true;
+						}
+				}
 
 			}
 		
-
 		}
 
 		return false;
