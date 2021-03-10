@@ -22,7 +22,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -34,7 +34,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -46,7 +46,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -58,7 +58,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -70,7 +70,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -82,7 +82,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -94,7 +94,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;
@@ -106,7 +106,7 @@ public class Knight extends Piece{
 		{
 			if(Board.hasPiece(i1,j1))
 			{
-				if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j1).getColour())
+				if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 					return false;
 				else
 					return true;

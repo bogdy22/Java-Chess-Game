@@ -32,6 +32,17 @@ public class Pawn extends Piece
 					else 
 						return true;
 				}
+
+				if(i0==6)
+				{
+					if(i1==5||i1==4)
+					{
+						if(Board.hasPiece(i1,j1)||Board.hasPiece(i0-1,j0))
+							return false;
+						else 
+							return true;
+					}
+				}
 			}
 
 			else
@@ -43,6 +54,17 @@ public class Pawn extends Piece
 					else 
 						return true;	
 				}
+
+				if(i0==1)
+				{
+					if(i1==2||i1==3)
+					{
+						if(Board.hasPiece(i1,j1)||Board.hasPiece(i0+1,j0))
+							return false;
+						else 
+							return true;
+					}
+				}
 			}
 		}
 
@@ -52,7 +74,7 @@ public class Pawn extends Piece
 			{
 				if(Board.hasPiece(i1,j1))
 				{
-					if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j0).getColour())
+					if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 						return false;
 					else
 						return true;
@@ -68,7 +90,7 @@ public class Pawn extends Piece
 			{
 				if(Board.hasPiece(i1,j1))
 				{
-					if(Board.getPiece(i0,j0).getColour()==Board.getPiece(i1,j0).getColour())
+					if(Board.getPiece(i0,j0).getColour().name()==Board.getPiece(i1,j1).getColour().name())
 						return false;
 					else
 						return true;
