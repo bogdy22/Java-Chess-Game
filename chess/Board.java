@@ -109,5 +109,4 @@ public class Board
 	{		
 		return board[i][j].hasPiece();
 	}
-
 }

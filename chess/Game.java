@@ -58,9 +58,10 @@ public class Game {
 								if(p.isLegitMove(i0,j0,i1,j1)==true)
 								{
 									gameEnd = Board.movePiece(i0,j0,i1,j1,p);
-									//System.out.println(gameEnd);
+									
 									if(gameEnd==true)
 									{
+										System.out.println();
 										System.out.println("White won!");
 									}
 
@@ -116,9 +117,10 @@ public class Game {
 								if(p.isLegitMove(i0,j0,i1,j1)==true)
 								{
 									gameEnd = Board.movePiece(i0,j0,i1,j1,p);
-									//System.out.println(gameEnd);
+									
 									if(gameEnd==true)
 									{
+										System.out.println();
 										System.out.println("Black won!");
 									}
 
@@ -182,6 +184,7 @@ public class Game {
 		}
 	}
 	
+
 	//This method should not be edited
 	public static void main (String args[])
 	{

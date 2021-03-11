@@ -1,6 +1,5 @@
 package chess;
 
-//This class requires your input
 public abstract class Piece 
 {
 	private String symbol;

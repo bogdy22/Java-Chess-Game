@@ -2,11 +2,6 @@ package chess;
 
 public class CheckInput 
 {
-
-	public CheckInput()
-	{
-
-	}
 	
 	//This method requires your input
 	public boolean checkCoordinateValidity(String input)
